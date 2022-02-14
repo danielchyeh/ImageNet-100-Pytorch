@@ -2,11 +2,27 @@
 
 PyTorch Implementation: Training ResNets on ImageNet-100 data
 
+## Prepare Datasets (ImageNet)
+ImageNet-1K data could be accessed with [ILSVRC 2012](http://www.image-net.org/challenges/LSVRC/2012/).
+
+```
+root
+├── data
+│   ├── imagenet
+│   │   ├── train
+│   │   ├── val
+│   ├── imagenet-100 (would be generated)
+│   │   ├── train
+│   │   ├── val
+
+```
+
+
 ## Quick Start
 
 Generate ImageNet-100 dataset based on [selected class file](https://arxiv.org/pdf/1906.05849.pdf) randomly sampled from ImageNet-1K dataset. Simply run the generate_IN100.py could generate folder of ImageNet-100.
 
-For example, run the following command to generate ImageNet-100 data
+For example, run the following command to generate ImageNet-100 from ImageNet-1K data.
 
 arguments:
   - `--source_folder`: specify the ImageNet-1K data folder
@@ -31,9 +47,9 @@ python main_IN100.py --model resnet18 \
   --learning_rate 0.2 \
   --cosine \
 ```
-Note: Please set up the augment: --data_folder as main path to ImageNet-100 in the main_IN.py
+Note: Please set up the augment: `--data_folder` as main path to ImageNet-100 in the main_IN.py
 
-Step learning schedule is applied as defult in the implementation (append --cosine to switch to cosine annealing).
+Step learning schedule is applied as defult in the implementation (append `--cosine` to switch to cosine annealing).
 
 ## Results
 Experiments on ImageNet-100:
