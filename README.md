@@ -25,8 +25,8 @@ Generate ImageNet-100 dataset based on [selected class file](https://arxiv.org/p
 For example, run the following command to generate ImageNet-100 from ImageNet-1K data.
 
 arguments:
-  - `--source_folder`: specify the ImageNet-1K data folder
-  - `--target_folder`: specify the ImageNet-100 data folder
+  - `--source_folder`: specify the ImageNet-1K data folder (e.g., `/root/data/imagenet/train`)
+  - `--target_folder`: specify the ImageNet-100 data folder (e.g., `/root/data/imagenet-100/train`)
   - `--target_class`: specify the ImageNet-100 txt file with list of classes [default: 'IN100.txt']
 
 ```
@@ -34,10 +34,6 @@ python generate_IN100.py \
   --source_folder /path/to/ImageNet-1K data
   --target_folder /path/to/ImageNet-100 data
 ```
-
-example:
-  - `--source_folder`: `/root/data/imagenet/train`
-  - `--target_folder`: `/root/data/imagenet-100/train`
 
 Note: Replace `train` with `val` to generate ImageNet-100 val data as well
 
@@ -53,7 +49,7 @@ python main_IN100.py --model resnet18 \
   --learning_rate 0.2 \
   --cosine \
 ```
-Note: Please set up the augment: `--data_folder` as main path (e.g. `/root/data/imagenet-100`) to ImageNet-100.
+Note: Please set up the augment: `--data_folder` as main path (e.g., `/root/data/imagenet-100`) to ImageNet-100.
 
 Cosine annealing schedule is applied as defult in the implementation (remove `--cosine` to switch to step learning schedule).
 
