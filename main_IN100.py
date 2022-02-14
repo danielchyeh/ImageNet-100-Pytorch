@@ -67,8 +67,8 @@ def parse_option():
     opt = parser.parse_args()
 
     # set the path according to the environment
-    opt.traindir = os.path.join(opt.data_folder, 'train_IN100/')
-    opt.valdir =  os.path.join(opt.data_folder, 'val_IN100/')
+    opt.traindir = os.path.join(opt.data_folder, 'train')
+    opt.valdir =  os.path.join(opt.data_folder, 'val')
 
 
     opt.model_path = './save/{}_models'.format(opt.dataset)
