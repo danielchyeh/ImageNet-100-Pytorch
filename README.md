@@ -1,8 +1,9 @@
-# ImageNet-100 (IN100) Implementation
+# ImageNet-100 (IN100) PyTorch Implementation
 
-Implementation of ImageNet-100 dataset for usage
+PyTorch Implementation: Training ResNets on ImageNet-100 data
 
 ## Quick Start
+
 Generate ImageNet-100 dataset based on [selected class file](https://arxiv.org/pdf/1906.05849.pdf) randomly sampled from ImageNet-1K dataset. Simply run the generate_IN100.py could generate folder of ImageNet-100.
 
 For example, run the following command to generate ImageNet-100 data
@@ -19,7 +20,9 @@ python generate_IN100.py \
 ```
 
 ## Training ResNets on ImageNet-100
+
 The implementation of training and validation code can be used in main_IN100.py, and run it for the usage.
+
 ```
 python main_IN100.py --model resnet18 \
   --data_folder /path/to/ImageNet-100 main folder \
@@ -38,3 +41,20 @@ Experiments on ImageNet-100:
 |:----:|:---:|:---:|:---:|:---:|
 | ResNet18 | 256 | 200 | Cross Entropy |  -  |
 | ResNet50 | 256 | 200 | Cross Entropy |  -  |
+
+## Citation
+
+If you use this toolbox in your work, please cite this project.
+
+```bibteX
+@misc{imagenet100pytorch,
+    title={{IN100pytorch}: PyTorch Implementation: Training ResNets on ImageNet-100},
+    author={Chun-Hsiao Yeh, Yubei Chen},
+    howpublished={\url{https://github.com/danielchyeh/ImageNet-100-Pytorch}},
+    year={2022}
+}
+```
+
+## Acknowledgements
+
+Part of this code is based on [HobbitLong/SupContrast](https://github.com/HobbitLong/SupContrast).
