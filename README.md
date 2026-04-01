@@ -37,6 +37,18 @@ python generate_IN100.py \
 
 Note: Replace `train` with `val` to generate ImageNet-100 val data as well
 
+Corruption Benchmarks:
+
+```
+python generate_IN100.py \
+  --source_folder /path/to/ImageNet-1K-c-(bar) data
+  --target_folder /path/to/ImageNet-100-c-(bar) data
+```
+
+This lets you create the same class IN-100-c and IN-100-c-bar dataset. Those are the corrupted version of the testset, with 19/10 different corruptions and 5 severity levels each, that have to be looped over. Obtain information towards the corruption benchmarks from:
+ImagenNet-c: https://github.com/hendrycks/robustness
+ImageNet-c-bar: https://github.com/facebookresearch/augmentation-corruption
+
 ## Training ResNets on ImageNet-100
 
 The implementation of training and validation code can be used in main_IN100.py, and run it for the usage.
